@@ -17,6 +17,7 @@ ul {
 }
 .current-list-item > li {
     margin: 10px;
+    font-family: monospace, Helvetica, sans-serif;
     font-weight: bold;
 }
 .current-list-item > button {
@@ -31,6 +32,15 @@ ul {
 }
 
 .completed-item > li {
+    font-family: monospace, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: line-through;
+    text-decoration-color: firebrick;
+    margin: 0px;
+   
+}
+
+.done {
     font-family: monospace, Helvetica, sans-serif;
     font-weight: bold;
     text-decoration: line-through;
