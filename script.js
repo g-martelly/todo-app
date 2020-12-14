@@ -13,7 +13,7 @@ console.log(out);
 input = document.getElementById('textbox');
 
 input.addEventListener("keypress", function(e) {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && input.value != "") {
         e.preventDefault();
         document.getElementById("add-button").click();
     }
@@ -21,7 +21,13 @@ input.addEventListener("keypress", function(e) {
 
 
 function addItem() {
+var addButton = document.getElementById('add-button');
 var textbox = document.getElementById('textbox');
+var text = textbox.value.trim();
+if (text.length == 0) {
+    throw "Nope";
+}
+
 var currentItemsList = document.getElementById('current-items');   
 var currentDivItem= document.createElement('div');
 var newListElement = document.createElement('li');
@@ -70,11 +76,16 @@ function deleteItem(evt) {
 function completeItem(evt) {
     evt = evt;
     var currentItem = evt.srcElement;
+    console.table(currentItem);
 if (currentItem.className != 'done') {
-    currentItem.style.fontSize = '20px';
     currentItem.className = "done";
+    var xButton = currentItem.nextSibling;
+    xButton.style.display = 'initial';
+    
 }  else {
     currentItem.className = ""; 
+    var xButton = currentItem.nextSibling;
+    xButton.style.display = 'none';
 }
 
 }
