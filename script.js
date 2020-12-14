@@ -1,7 +1,8 @@
 //make Add item button work
 document.getElementById("add-button").addEventListener('click', addItem);
 document.querySelector('#current-items').addEventListener('click', deleteItem);
-
+var out = document.querySelector('#current-items button').children;
+console.log(out);
 //figure out how to add a new list item to ul#current-items 
 
 //add a new li item using text from the textbox
