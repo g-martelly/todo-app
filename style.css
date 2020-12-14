@@ -1,19 +1,49 @@
-#current-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+ul {
+    list-style-type: none;
 }
 
-.delete-button, .completed-item {
-   /* display: inline-block; */
-    margin-right: 5px;
+
+#current-items  {
+    display: flex;
+    flex-direction: column;
+}
+#current-list-item {
+    display: flex;
+}
+
+.current-list-item {
+    display: flex;
+    justify-content: right;
+}
+.current-list-item > li {
+    margin: 10px;
+    font-weight: bold;
+}
+.current-list-item > button {
+    margin-left: 5px;
+
 }
 
 .completed-item {
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.completed-item > li {
     font-family: monospace, Helvetica, sans-serif;
     font-weight: bold;
     text-decoration: line-through;
     text-decoration-color: firebrick;
+    margin: 0px;
+   
 }
+
+.completed-item > button {
+    margin-left: 10px;
+}
+
+
+
 
 
