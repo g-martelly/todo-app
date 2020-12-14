@@ -1,4 +1,8 @@
-//make Add item button work
+//TODO
+//refactor code
+//learn how to add fonts
+//make X button look nice - done
+//fix longer items centering too much
 document.getElementById("add-button").addEventListener('click', addItem);
 //document.querySelector('#current-items').addEventListener('click', deleteItem);
 //document.querySelector('#current-items div.current-list-item button.delete-button').addEventListener('click', deleteItem);
@@ -35,7 +39,7 @@ var XButton = document.createElement('button');
    
   newListElement.textContent = textbox.value;
   XButton.className = 'delete-button';
-  XButton.textContent = "x";
+  XButton.innerHTML = "X";
    currentDivItem.className = 'current-list-item';
    currentItemsList.appendChild(currentDivItem);
    currentDivItem.appendChild(newListElement);
