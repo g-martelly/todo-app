@@ -1,25 +1,42 @@
 body {
-    background: white;
-}
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
 .title {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0px;
+    background: transparent;
+    font-family: cursive;
     font-size: 50px;
-    color: orange;
+    color:white;
 }
 #to-do {
+    border: 4px solid white;
+    
+    border-radius: 10px ;
     margin: auto;
+    margin-top: 100px;
     text-align: center;
     width: 60%;
-  padding: 10px;
+  padding: 0px;
+}
+
+::placeholder {
+    color : white;
+    opacity: 1;
 }
 
 #textbox {
-    font-size: 30px;
- background-color: white;
+    font-size: 25px;
+    color: white;
+    
+ background-color:transparent;
  border-top-style: hidden;
     border-right-style: hidden;
  border-left-style: hidden;
- border-bottom-style: groove;
+ border-bottom-style: inset;
+ border-color: honeydew;
  outline: none;
  
 }
@@ -27,8 +44,8 @@ body {
 #add-button {
     font-size: 40px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: orange;
-    background-color: white;
+    color: greenyellow;
+    background-color: transparent;
     border: none;
     outline: none;
 
@@ -79,11 +96,14 @@ div.current-list-item {
     justify-content: right;
     text-align: center;
     width: 100%;
+    color: white;
+    font-size: 15px;
 }
 .current-list-item > li {
     margin: 1px;
     font-family: monospace, Helvetica, sans-serif;
     font-weight: bold;
+    font-family: fantasy;
     font-size: 20px;
 }
 .current-list-item > button {

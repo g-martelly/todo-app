@@ -1,5 +1,6 @@
 //TODO
 //refactor code
+//add clear button
 //address enter on blank entry wiping out everything bug
 //learn how to add fonts
 //make X button look nice - done
