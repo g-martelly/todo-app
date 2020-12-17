@@ -1,5 +1,6 @@
 //TODO
 //refactor code
+//address enter on blank entry wiping out everything bug
 //learn how to add fonts
 //make X button look nice - done
 //fix longer items centering too much
@@ -8,11 +9,6 @@ document.getElementById("add-button").addEventListener('click', addItem);
 //document.querySelector('#current-items div.current-list-item button.delete-button').addEventListener('click', deleteItem);
 var out = document.querySelector('button.delete-button');
 console.log(out);
-//figure out how to add a new list item to ul#current-items 
-
-//add a new li item using text from the textbox
-//implement enter button on textbox
-//
 
 input = document.getElementById('textbox');
 
@@ -21,6 +17,7 @@ input.addEventListener("keypress", function(e) {
         e.preventDefault();
         document.getElementById("add-button").click();
     }
+   
 })
 
 
@@ -35,17 +32,18 @@ if (text.length == 0) {
 var currentItemsList = document.getElementById('current-items');   
 var currentDivItem= document.createElement('div');
 var newListElement = document.createElement('li');
-var XButton = document.createElement('button');
+var XButton = document.createElement('span');
    
   newListElement.textContent = textbox.value;
-  XButton.className = 'delete-button';
-  XButton.innerHTML = "X";
+  XButton.className = 'x';
+  XButton.style.display = 'none';
+  XButton.innerHTML = "";
    currentDivItem.className = 'current-list-item';
    currentItemsList.appendChild(currentDivItem);
    currentDivItem.appendChild(newListElement);
    currentDivItem.appendChild(XButton);
 
-  const buttons =  document.querySelectorAll('#current-items div.current-list-item button.delete-button');
+  const buttons =  document.querySelectorAll('#current-items div.current-list-item span.x');
   console.table (buttons);
   for (const button of buttons) {
     button.addEventListener('click', deleteItem);
@@ -81,14 +79,15 @@ function completeItem(evt) {
     evt = evt;
     var currentItem = evt.srcElement;
     console.table(currentItem);
+    console
 if (currentItem.className != 'done') {
     currentItem.className = "done";
-    var xButton = currentItem.nextSibling;
+    var xButton = currentItem.nextElementSibling;
     xButton.style.display = 'initial';
     
 }  else {
     currentItem.className = ""; 
-    var xButton = currentItem.nextSibling;
+    var xButton = currentItem.nextElementSibling;
     xButton.style.display = 'none';
 }
 
