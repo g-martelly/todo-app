@@ -5,6 +5,13 @@ var out = document.querySelector('button.delete-button');
 input = document.getElementById('textbox');
 
 input.addEventListener("keypress", function(e) {
+
+ var textbox = document.getElementById('textbox');
+var text = textbox.value.trim();
+if (text.length == 0) {
+    console.log("No empty entries allowed");
+    textbox.value = "";
+}
     if (e.keyCode === 13 && input.value != "") {
         e.preventDefault();
         document.getElementById("add-button").click();
@@ -12,17 +19,11 @@ input.addEventListener("keypress", function(e) {
         e.preventDefault();
         console.log("No empty entries allowed");
     }
-    
    
 })
 
 function addItem() {
 var addButton = document.getElementById('add-button');
-var textbox = document.getElementById('textbox');
-var text = textbox.value.trim();
-if (text.length == 0) {
-    throw "Value can't be empty"; 
-}
 
 var currentItemsList = document.getElementById('current-items');   
 var currentDivItem= document.createElement('div');
@@ -39,13 +40,11 @@ var XButton = document.createElement('span');
    currentDivItem.appendChild(XButton);
 
   const buttons =  document.querySelectorAll('#current-items div.current-list-item span.x');
-  console.table (buttons);
   for (const button of buttons) {
     button.addEventListener('click', deleteItem);
   }
 
   const listItems =  document.querySelectorAll('#current-items div.current-list-item li');
-  console.table (listItems);
   for (const listItem of listItems) {
     listItem.addEventListener('click', completeItem);
   }
@@ -60,10 +59,7 @@ function clearTextAndFocus() {
 function deleteItem(evt) {
     evt = evt;
     var currentItem = evt.srcElement;
-    console.log("currentItem is: " + currentItem);
     var i = document.getElementById('current-items');
-    console.table(i.child);
-    console.log("this is it: " + currentItem.parentElement);
     var el = this;
     i.removeChild(currentItem.parentElement);
 
@@ -90,9 +86,7 @@ if (currentItem.className != 'done') {
 function clearItems() {
 
     const listItems =  document.querySelectorAll('#current-items div.current-list-item li.done');
-    var i = document.getElementById('current-items');
     for (const listItem of listItems) {
-     console.log(listItem.parentNode);
      listItem.parentNode.parentNode.removeChild(listItem.parentNode);
     }
 

@@ -50,6 +50,15 @@ body {
 
 }
 
+#clear-button {
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: greenyellow;
+    background-color: transparent;
+    border: solid 2px greenyellow;
+    margin-bottom: 10px;
+}
+
 .delete-button {
     font-size: 25px;
     font-weight: bolder;
