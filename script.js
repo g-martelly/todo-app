@@ -1,7 +1,6 @@
 document.getElementById("add-button").addEventListener('click', addItem);
 document.getElementById("clear-button").addEventListener('click', clearItems);
 var out = document.querySelector('button.delete-button');
-console.log(out);
 
 input = document.getElementById('textbox');
 
@@ -9,17 +8,20 @@ input.addEventListener("keypress", function(e) {
     if (e.keyCode === 13 && input.value != "") {
         e.preventDefault();
         document.getElementById("add-button").click();
+    } else if (e.keyCode == 13 && input.value == ""){
+        e.preventDefault();
+        console.log("No empty entries allowed");
     }
+    
    
 })
-
 
 function addItem() {
 var addButton = document.getElementById('add-button');
 var textbox = document.getElementById('textbox');
 var text = textbox.value.trim();
 if (text.length == 0) {
-    throw "Value can't be empty";
+    throw "Value can't be empty"; 
 }
 
 var currentItemsList = document.getElementById('current-items');   
@@ -82,7 +84,6 @@ if (currentItem.className != 'done') {
     var xButton = currentItem.nextElementSibling;
     xButton.style.display = 'none';
 }
-
 
 }
 
