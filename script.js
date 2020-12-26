@@ -1,4 +1,5 @@
 document.getElementById("add-button").addEventListener('click', addItem);
+document.getElementById("clear-button").addEventListener('click', clearItems);
 var out = document.querySelector('button.delete-button');
 console.log(out);
 
@@ -63,8 +64,7 @@ function deleteItem(evt) {
     console.log("this is it: " + currentItem.parentElement);
     var el = this;
     i.removeChild(currentItem.parentElement);
-    
-   console.table("evt is: " + evt + "targ is: " + currentItem + "this is: " + el);
+
 }
 
 function completeItem(evt) {
@@ -82,5 +82,17 @@ if (currentItem.className != 'done') {
     var xButton = currentItem.nextElementSibling;
     xButton.style.display = 'none';
 }
+
+
+}
+
+function clearItems() {
+
+    const listItems =  document.querySelectorAll('#current-items div.current-list-item li.done');
+    var i = document.getElementById('current-items');
+    for (const listItem of listItems) {
+     console.log(listItem.parentNode);
+     listItem.parentNode.parentNode.removeChild(listItem.parentNode);
+    }
 
 }
