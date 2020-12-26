@@ -9,7 +9,6 @@ input.addEventListener("keypress", function(e) {
  var textbox = document.getElementById('textbox');
 var text = textbox.value.trim();
 if (text.length == 0) {
-    console.log("No empty entries allowed");
     textbox.value = "";
 }
     if (e.keyCode === 13 && input.value != "") {
@@ -17,7 +16,6 @@ if (text.length == 0) {
         document.getElementById("add-button").click();
     } else if (e.keyCode == 13 && input.value == ""){
         e.preventDefault();
-        console.log("No empty entries allowed");
     }
    
 })
@@ -68,8 +66,7 @@ function deleteItem(evt) {
 function completeItem(evt) {
     evt = evt;
     var currentItem = evt.srcElement;
-    console.table(currentItem);
-    console
+   
 if (currentItem.className != 'done') {
     currentItem.className = "done";
     var xButton = currentItem.nextElementSibling;
