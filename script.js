@@ -1,13 +1,4 @@
-//TODO
-//refactor code
-//add clear button
-//address enter on blank entry wiping out everything bug
-//learn how to add fonts
-//make X button look nice - done
-//fix longer items centering too much
 document.getElementById("add-button").addEventListener('click', addItem);
-//document.querySelector('#current-items').addEventListener('click', deleteItem);
-//document.querySelector('#current-items div.current-list-item button.delete-button').addEventListener('click', deleteItem);
 var out = document.querySelector('button.delete-button');
 console.log(out);
 
@@ -27,7 +18,7 @@ var addButton = document.getElementById('add-button');
 var textbox = document.getElementById('textbox');
 var text = textbox.value.trim();
 if (text.length == 0) {
-    throw "Nope";
+    throw "Value can't be empty";
 }
 
 var currentItemsList = document.getElementById('current-items');   

@@ -1,8 +1,7 @@
 body {
     background: #56CCF2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  
+    background: linear-gradient(to right, #2F80ED, #56CCF2); 
   }
 .title {
     margin: 0px;
@@ -33,7 +32,7 @@ body {
     
  background-color:transparent;
  border-top-style: hidden;
-    border-right-style: hidden;
+ border-right-style: hidden;
  border-left-style: hidden;
  border-bottom-style: inset;
  border-color: honeydew;
@@ -101,11 +100,10 @@ div.current-list-item {
 }
 .current-list-item > li {
     margin: 1px;
-    font-family: monospace, Helvetica, sans-serif;
     font-weight: bold;
-    font-family: fantasy;
     font-size: 20px;
 }
+
 .current-list-item > button {
     margin-left: 5px;
     display: none;
